@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+
+    <div id="app">
+        <ul>
+            <li v-for="group in groups">
+                <p>${ group.course } @${ group.time } | ${ group.location }</p>
+                <p>${ group.description }</p>
+                <p>Capacity: ${ group.joined }/${ group.capacity }</p>
+                <button v-on:click="newJoin">Join</button>
+            </li>
+        </ul>
+        
+    </div>
+
+
+   
+{% endblock %}
+    
