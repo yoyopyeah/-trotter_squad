@@ -22,10 +22,16 @@ const app = Vue.createApp({
               joined: 3,
               open: true,
             }
-        ]
-      
+        ],
+        form: {
+          isCreating: false,
+          course: "",
+          description: "",
+          time: "",
+          location: "",
+          capacity: 0,
+        }
     }
-
   },
   methods: {
     newJoin(group) {
@@ -35,6 +41,24 @@ const app = Vue.createApp({
       } else {
         window.alert("Sorry! Study group capacity reached!")
       }
+    },
+    createGroup(target) {
+      console.log("in create")
+      target.isCreating = true;
+    },
+    submitForm(form) {
+      form.isCreating = false
+      this.groups.push(
+        {
+          course: form.course,
+          description: form.description,
+          time: form.time,
+          location: form.location,
+          capacity: form.capacity,
+          joined: 0,
+          open: true,
+        }
+      )
     }
   },
 })

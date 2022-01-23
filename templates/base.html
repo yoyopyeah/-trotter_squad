@@ -12,21 +12,32 @@
 </head>
 <body>
     <!-- <h1>Study Group Organizer</h1> -->
-    <nav class="shift">
-        <div class="logo">
-          Logo
+    <!-- <div id="navbar">
+        <div id="logo">Logo</div>
+        <div id="new-group">
+            <a href="#">Create new Study Group!</a>
         </div>
+    </div> -->
+
+    <nav class="shift">
         <ul>
-            <li><a href="#">Create new Study Group!</a></li>
+            <!-- <li>
+                Logo
+            </li> -->
+            <li>
+                <a href="#">Create new Study Group!</a>
+                <!-- <button @click="createGroup(create)">create</button> -->
+
+            </li>
         </ul>
     </nav>
     
     <div class="container">
         <!-- <div class="col-6 mx-auto mt-5"> -->
 
-            {% block content %}
+        {% block content %}
 
-            {% endblock %}
+        {% endblock %}
         <!-- </div> -->
     </div>
 

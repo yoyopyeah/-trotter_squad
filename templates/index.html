@@ -3,6 +3,49 @@
 {% block content %}  
 
 <div id="app">
+    <div class="create-group">
+        <button @click="createGroup(form)" v-show="!form.isCreating">
+            create
+        </button>
+
+        <form v-show="form.isCreating">
+            <p>${ form.course }</p>
+            <div class="field">
+                <label class="label">Course</label>
+                <div class="control">   
+                    <input class="input" type="text" v-model="form.course" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Description</label>
+                <div class="control">   
+                    <input class="input" type="text" v-model="form.description" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Date & Time</label>
+                <div class="control">   
+                    <input class="input" type="text" v-model="form.time" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Location</label>
+                <div class="control">   
+                    <input class="input" type="text" v-model="form.location" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Capacity</label>
+                <div class="control">   
+                    <input class="input" type="text" v-model="form.capacity" />
+                </div>
+            </div>
+
+            <button id="submit" @click="submitForm(form)">Submit</button>
+        </form>
+    </div>
+
+
     <div class="entry" v-for="group in groups" v-show="group.open">
         <!-- <div class="content" v-show="group.open"> -->
             <div class="info">
