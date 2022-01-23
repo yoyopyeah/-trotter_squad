@@ -2,19 +2,31 @@
 
 {% block content %}  
 
-    <div id="app">
-        <ul>
-            <li v-for="group in groups">
+<div id="app">
+    <div class="entry" v-for="group in groups" v-show="group.open">
+        <!-- <div class="content" v-show="group.open"> -->
+            <div class="info">
                 <p>${ group.course } @${ group.time } | ${ group.location }</p>
                 <p>${ group.description }</p>
+            </div>
+            <div class="cap">
                 <p>Capacity: ${ group.joined }/${ group.capacity }</p>
-                <button v-on:click="newJoin">Join</button>
-            </li>
-        </ul>
-        
+                <button @click="newJoin(group)">Join</button>
+            </div>
+        <!-- </div> -->
     </div>
+    <!-- <ul>
+        <li v-for="group in groups">
+            <p>${ group.course } @${ group.time } | ${ group.location }</p>
+            <p>${ group.description }</p>
+            <p>Capacity: ${ group.joined }/${ group.capacity }</p>
+            <button v-on:click="newJoin">Join</button>
+        </li>
+    </ul> -->
+    
+</div>
 
 
-   
+
 {% endblock %}
     

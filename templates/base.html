@@ -11,17 +11,23 @@
     <Title>Study Group App</Title> 
 </head>
 <body>
+    <!-- <h1>Study Group Organizer</h1> -->
+    <nav class="shift">
+        <div class="logo">
+          Logo
+        </div>
+        <ul>
+            <li><a href="#">Create new Study Group!</a></li>
+        </ul>
+    </nav>
     
     <div class="container">
-        <h1>Study Group Organizer</h1>
-        <div class="row">
-            <div class="col-6 mx-auto mt-5">
-    
-                {% block content %}
-   
-                {% endblock %}
-            </div>
-        </div>
+        <!-- <div class="col-6 mx-auto mt-5"> -->
+
+            {% block content %}
+
+            {% endblock %}
+        <!-- </div> -->
     </div>
 
     <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>

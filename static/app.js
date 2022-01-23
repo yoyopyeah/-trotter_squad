@@ -10,7 +10,8 @@ const app = Vue.createApp({
               time: 'Jan. 24',
               location: 'trottier',
               capacity: 10,
-              joined: 5
+              joined: 5,
+              open: true,
             },
             {
               course: 'MATH 222',
@@ -18,7 +19,8 @@ const app = Vue.createApp({
               time: 'Jan. 25',
               location: 'Burnside',
               capacity: 8,
-              joined: 3
+              joined: 3,
+              open: true,
             }
         ]
       
@@ -26,12 +28,13 @@ const app = Vue.createApp({
 
   },
   methods: {
-    newJoin() {
-        if (this.joined + 1 <= this.capacity) {
-            this.joined++
-        } else {
-          window.alert("Sorry! Study group capacity reached!")
-        }
+    newJoin(group) {
+      console.log(group.course)
+      if (group.joined + 1 <= group.capacity) {
+          group.joined++
+      } else {
+        window.alert("Sorry! Study group capacity reached!")
+      }
     }
   },
 })
